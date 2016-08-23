@@ -210,7 +210,7 @@ snippet h4 "XHTML <h4>" w
 <h4>$0</h4>
 endsnippet
 
-snippet head "XHTML <head>"
+snippet head "HTML <head>"
 <head>
 	<meta charset="utf-8">
 	<title>${1:`!p snip.rv = snip.basename or "Page Title"`}</title>
@@ -234,6 +234,10 @@ snippet script "XHTML <script>" w
 <script type="text/javascript" charset="utf-8">
 	$0
 </script>
+endsnippet
+
+snippet exjs "external javascript" b
+<script type="text/javascript" charset="utf-8" src="${1:link}"></script>${2}
 endsnippet
 
 snippet style "XHTML <style>" w

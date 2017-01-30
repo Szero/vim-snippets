@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SPACED=$(grep -REn '^ .+' --include '*.snippets' ultiSnips)
+SPACED=$(grep -REn '^ .+' --include '*.snippets' UltiSnips)
 
 if [[ $? -ne 1 ]]; then
   echo These snippet lines are indented with spaces:

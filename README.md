@@ -1,4 +1,4 @@
-snipMate & UltiSnip Snippets [![Build Status](https://travis-ci.org/Szero/vim-snippets.svg?branch=master)](https://travis-ci.org/Szero/vim-snippets)
+snipMate & UltiSnip Snippets
 ============================
 
 This repository contains snippets files for various programming languages.

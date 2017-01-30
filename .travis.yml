@@ -1,8 +1,0 @@
-language: false
-sudo: false
-
-notifications:
-  email: false
-
-script:
-  - ./tests.sh

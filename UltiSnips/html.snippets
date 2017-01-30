@@ -125,13 +125,13 @@ endsnippet
 #############
 # HTML TAGS #
 #############
-snippet input "Input with Label" w
-<label for="${2:${1/[[:alpha:]]+|( )/(?1:_:\L$0)/g}}">$1</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="$5"${6: id="${7:$2}"}`!p x(snip)`>
-
+snippet inl "Input with Label" w
+<label for="${2:${1/[[:alpha:]]+|( )/(?1:_:\L$0)/g}}">$1</label>
+<input type="${3:text/submit/hidden/button}" name="${4:$2}" placeholder="$5"${6: id="${7:$2}"}`!p x(snip)`>
 endsnippet
 
-snippet input "XHTML   <input>" w
-<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="$3"${4: id="${5:$2}"}`!p x(snip)`>
+snippet input "<input>" w
+<input type="${1:text/submit/hidden/button}" name="${2:some_name}" placeholder="$3"${4: id="${5:$2}"}`!p x(snip)`>
 endsnippet
 
 
@@ -148,15 +148,15 @@ snippet select "Select Box" w
 endsnippet
 
 
-snippet textarea "XHTML   <textarea>" w
+snippet textarea "  <textarea>" w
 <textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">$0</textarea>
 endsnippet
 
-snippet mailto "XHTML <a mailto: >" w
+snippet mailto "<a mailto: >" w
 <a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
 endsnippet
 
-snippet base "XHTML <base>" w
+snippet base "<base>" w
 <base href="$1"${2: target="$3"}`!p x(snip)`>
 endsnippet
 
@@ -172,6 +172,10 @@ snippet div "<div>" w
 </div>
 endsnippet
 
+snippet butt "<button>" w
+<button ${2:id="basedID"}>$1</button>$0
+endsnippet
+
 snippet div. "<div> with class" w
 <div`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>
 	$0
@@ -184,7 +188,7 @@ snippet div# "<div> with ID & class" w
 </div>
 endsnippet
 
-snippet form "XHTML <form>" w
+snippet form "<form>" w
 <form action="${1:`!p
 snip.rv = (snip.basename or 'unnamed') + '_submit'
 `}" method="${2:get}" accept-charset="utf-8">
@@ -194,19 +198,19 @@ snip.rv = (snip.basename or 'unnamed') + '_submit'
 </form>
 endsnippet
 
-snippet h1 "XHTML <h1>" w
+snippet h1 "<h1>" w
 <h1>$0</h1>
 endsnippet
 
-snippet h2 "XHTML <h2>" w
+snippet h2 "<h2>" w
 <h2>$0</h2>
 endsnippet
 
-snippet h3 "XHTML <h3>" w
+snippet h3 "<h3>" w
 <h3>$0</h3>
 endsnippet
 
-snippet h4 "XHTML <h4>" w
+snippet h4 "<h4>" w
 <h4>$0</h4>
 endsnippet
 
@@ -218,19 +222,19 @@ snippet head "HTML <head>"
 </head>
 endsnippet
 
-snippet link "XHTML <link>" w
+snippet link "<link>" w
 <link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}"`!p x(snip)`>
 endsnippet
 
-snippet meta "XHTML <meta>" w
+snippet meta "<meta>" w
 <meta name="${1:name}" content="${2:content}"`!p x(snip)`>
 endsnippet
 
-snippet scriptsrc "XHTML <script src...>" w
+snippet scriptsrc "<script src...>" w
 <script src="$1" type="text/javascript" charset="${3:utf-8}"></script>
 endsnippet
 
-snippet script "XHTML <script>" w
+snippet script "<script>" w
 <script type="text/javascript" charset="utf-8">
 	$0
 </script>
@@ -240,13 +244,17 @@ snippet exjs "external javascript" b
 <script type="text/javascript" charset="utf-8" src="${1:link}"></script>${2}
 endsnippet
 
-snippet style "XHTML <style>" w
+snippet span "<span>" w
+<span ${1:id="something"}>${2}</span>$0
+endsnippet
+
+snippet style "<style>" w
 <style type="text/css" media="screen">
 	$0
 </style>
 endsnippet
 
-snippet table "XHTML <table>" w
+snippet table "<table>" w
 <table border="${1:0}"${2: cellspacing="${3:5}" cellpadding="${4:5}"}>
 	<tr>
 		<th>${5:Header}</th>
@@ -259,6 +267,10 @@ endsnippet
 
 snippet a "Link" w
 <a href="$1" target="${2:_blank}">$3</a>
+endsnippet
+
+snippet img "<img>" i
+<img src="$1"${2: alt="$3"}/>
 endsnippet
 
 snippet p "paragraph" w
@@ -287,7 +299,7 @@ snippet tr "table row" w
 <tr>$0</tr>
 endsnippet
 
-snippet title "XHTML <title>" w
+snippet title "<title>" w
 <title>${1:`!p snip.rv = snip.basename or "Page Title"`}</title>
 endsnippet
 

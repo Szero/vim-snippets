@@ -10,8 +10,10 @@ endsnippet
 
 snippet #ifndef "#ifndef ... #define ... #endif"
 #ifndef ${1/([A-Za-z0-9_]+).*/$1/}
-#define ${1:SYMBOL} ${2:value}
+#define ${1:SYMBOL}
+$2
 #endif /* ifndef $1 */
+$0
 endsnippet
 
 snippet #if "#if #endif" b
@@ -67,6 +69,18 @@ endsnippet
 
 snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
+endsnippet
+
+snippet if "if (condition) {..}" b
+if (${1:/* condition */}) {
+	${VISUAL}${2}
+} ${0}
+endsnippet
+
+snippet el " else { .. }"
+else {
+	${VISUAL}${1}
+} ${0}
 endsnippet
 
 snippet eli "else if .. (eli)"

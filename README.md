@@ -1,17 +1,21 @@
 snipMate & UltiSnip Snippets
 ============================
 
-[![Build Status](https://travis-ci.org/honza/vim-snippets.svg)](https://travis-ci.org/honza/vim-snippets)
-
+[![Build Status](https://travis-ci.org/Szero/vim-snippets.svg?branch=master)](https://travis-ci.org/Szero/vim-snippets)
 This repository contains snippets files for various programming languages.
 
 It is community-maintained and many people have contributed snippet files and
 other improvements already.
 
+Disclaimer
+----------
+This is my personal fork of honza's repository. I removed snipMate format 
+snippets  since I'm only using ultisnips as my snippet engine. I don't keep 
+this fork in sync with main repository.
+
 Contents
 --------
 
-- `snippets/*`: snippets using snipMate format
 - `UltiSnips/*`: snippets using UltiSnips format
 
 Snippet engines supporting vim-snippets

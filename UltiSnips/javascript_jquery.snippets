@@ -299,8 +299,8 @@ snippet is "is"
 ${1:object}.is('${2:selector expression}')$0
 endsnippet
 
-snippet os "object selector"
-$('${1:selector}')
+snippet os "object selector" i
+$(${1:selector})
 endsnippet
 
 snippet load "load"
@@ -352,6 +352,10 @@ endsnippet
 
 snippet not "not"
 ${1:object}.not('${2:selector expression}')$0
+endsnippet
+
+snippet on "on event function" i
+${1:object}.on('${2:event type}', ${3:child selector});$0
 endsnippet
 
 snippet one "one"
@@ -474,7 +478,7 @@ snippet text "text"
 ${1:object}.text(${2:'some text'})$0
 endsnippet
 
-snippet this "this"
+snippet this "this" i
 $(this)${1}
 endsnippet
 

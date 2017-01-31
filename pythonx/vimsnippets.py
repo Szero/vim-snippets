@@ -1,8 +1,7 @@
 """Helper methods used in UltiSnips snippets."""
 
-import string, vim, logging
+import string, vim
 
-logger = logging.getLogger("vim")
 def complete(tab, opts):
     """
     get options that start with tab
@@ -33,7 +32,7 @@ def _parse_comments(s):
             flags, text = next(i).split(':', 1)
 
             if len(flags) == 0:
-                rv.append((text, text, text, ""))
+                rv.append(('OTHER', text, text, text, ""))
             # parse 3-part comment, but ignore those with O flag
             elif 's' in flags and 'O' not in flags:
                 ctriple = ["TRIPLE"]
@@ -77,6 +76,7 @@ def get_comment_format():
             return c[1:]
     return comments[0][1:]
 
+
 def make_box(twidth, bwidth=None):
     b, m, e, i = (s.strip() for s in get_comment_format())
     bwidth_inner = bwidth - 3 - max(len(b), len(i + e)) if bwidth else twidth + 2
@@ -85,7 +85,6 @@ def make_box(twidth, bwidth=None):
     mlines = i + m + " " + " " * nspaces
     mlinee = " " + " "*(bwidth_inner - twidth - nspaces) + m
     eline = i + m + bwidth_inner * m[0] + 2 * m[0] + e
-    logger.exception("%s, %s, %s, %s",  b,m,e,i)
     return sline, mlines, mlinee, eline
 
 def foldmarker():

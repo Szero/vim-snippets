@@ -1,4 +1,4 @@
-snipMate & UltiSnip Snippets
+~~snipMate &~~ UltiSnip Snippets
 ============================
 
 This repository contains snippets files for various programming languages.
@@ -9,8 +9,7 @@ other improvements already.
 Disclaimer
 ----------
 This is my personal fork of honza's repository. I removed snipMate format 
-snippets  since I'm only using ultisnips as my snippet engine. I don't keep 
-this fork in sync with main repository.
+snippets since I'm only using ultisnips as my snippet engine.
 
 Contents
 --------

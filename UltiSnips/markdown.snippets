@@ -84,7 +84,7 @@ snippet fnt "Footnote"
 [^$1]:${2:Text}
 endsnippet
 
-post_jump "create_table(snip)"
+pre_expand "create_table(snip)"
 snippet "tb(\d+x\d+)" "Customizable table" br
 `!p snip.rv = match.group(1)`
 endsnippet
